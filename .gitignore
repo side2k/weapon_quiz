@@ -3,4 +3,5 @@
 /src/
 /local/
 /include/
+/weapon_quiz/local_settings.py
 *.pyc

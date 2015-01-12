@@ -63,8 +63,8 @@ WSGI_APPLICATION = 'weapon_quiz.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'weapon_quiz',
+        'ENGINE': 'django.db.backends.',
+        'NAME': '',
     }
 }
 
@@ -86,3 +86,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+ )
+
+try:
+    from local_settings import *
+except ImportError:
+    pass
