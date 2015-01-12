@@ -1,0 +1,4 @@
+Django==1.7.2
+Pillow==2.5.0
+django-model-utils==2.0.3
+-e git+https://github.com/tomwalker/django_quiz.git@05761f35c88fe4ce452319fa8fbe2e1d2aec4015#egg=django_quiz_app-master
