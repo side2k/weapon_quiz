@@ -5,3 +5,5 @@
 /include/
 /weapon_quiz/local_settings.py
 *.pyc
+/.coverage
+/coverage.xml
