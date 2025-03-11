@@ -9,15 +9,4 @@ services:
     ports:
       - "8082:8000"
 
-    command: runserver
-
-  mysql:
-    image: mysql:8
-    volumes:
-      - mysql-data:/var/lib/mysql
-    environment:
-      - LANG=ru_RU.UTF-8
-      - MYSQL_ALLOW_EMPTY_PASSWORD=1
-
-volumes:
-  mysql-data:
+    command: gunicorn

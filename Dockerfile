@@ -1,7 +1,7 @@
 FROM python:2.7-slim
 
 RUN apt update && \
-    apt install -y git gcc python-dev libmariadb-dev-compat
+    apt install -y git gcc sqlite3
 
 RUN mkdir /app
 WORKDIR /app
@@ -15,6 +15,11 @@ ENTRYPOINT [ "bash", "/app/entrypoint.sh" ]
 
 COPY . .
 
+RUN mkdir /var/lib/weapon_quiz/
 ENV DJANGO_SETTINGS_MODULE=weapon_quiz.settings
+
+RUN python manage.py syncdb --noinput
+RUN python manage.py import_questions quiz_1.txt
+RUN python manage.py import_questions quiz_2.txt
 
 CMD ["gunicorn", "weapon_quiz.wsgi:application"]

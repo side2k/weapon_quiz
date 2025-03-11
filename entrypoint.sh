@@ -22,7 +22,8 @@ if [[ $1 == "manage" ]]; then
 fi
 
 if [[ $1 == "gunicorn" ]]; then
-    exec gunicorn "$@"
+    shift
+    exec gunicorn weapon_quiz.wsgi:application -b 0.0.0.0:8000 "$@"
 fi
 
 exec "$@"

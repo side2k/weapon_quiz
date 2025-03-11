@@ -1,0 +1,11 @@
+**/*.pyc
+
+/weapon_quiz/local_settings.py
+/.venv/
+/bin/
+/lib/
+/local/
+/src/
+
+/compose.yaml
+/Dockerfile

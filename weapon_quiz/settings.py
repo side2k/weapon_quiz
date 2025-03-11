@@ -64,9 +64,8 @@ WSGI_APPLICATION = 'weapon_quiz.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'weapon_quiz',
-        'HOST': 'mysql',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': '/var/lib/weapon_quiz/weapon_quiz.sqlite',
     }
 }
 
